@@ -1,21 +1,19 @@
 {
   "$schema": "https://raw.githubusercontent.com/devcontainers/spec/main/schemas/devContainer.schema.json",
-  "build": {
-    "dockerfile": "Dockerfile",
-    "context": ".."
-  },
-  "remoteUser": "devuser",
-  "forwardPorts": [3000, 3001],
-  "overrideCommand": true,
-
+  "name": "SakePortfolio Devcontainer",
+  "build": { "dockerfile": "Dockerfile", //.devcontainerから見たパス
+             "context": ".." },
   "customizations": {
     "vscode": {
       "settings": {
         "terminal.integrated.shell.linux": "/bin/bash"
       },
+      
       "extensions": [
         "amazonwebservices.aws-toolkit-vscode"
       ]
     }
-  }
+  },
+  "forwardPorts": [3000, 3001],
+  "remoteUser": "vscode"
 }

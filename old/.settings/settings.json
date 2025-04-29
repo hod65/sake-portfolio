@@ -1,0 +1,12 @@
+{
+  // Hyper-V モードの Docker （Windows の docker.exe）を使う
+  "remote.containers.dockerPath": "docker",
+  "remote.containers.dockerHost": "npipe:////./pipe/docker_engine",
+  "remote.containers.userEnvProbe": "none",
+  // Dev Containers 拡張の権限サポートを有効化
+  "remote.extensionKind": {
+    "ms-vscode.devcontainers": ["workspace"]
+  },
+  // ログレベルを上げて詳細を取得
+  "remote.containers.logLevel": "trace"
+}

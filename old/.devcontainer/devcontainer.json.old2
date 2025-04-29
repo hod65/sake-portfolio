@@ -1,0 +1,40 @@
+{
+  "$schema": "https://raw.githubusercontent.com/devcontainers/spec/main/schemas/devContainer.schema.json",
+  "name": "SakePortfolio Devcontainer",
+  "image": "mcr.microsoft.com/vscode/devcontainers/javascript-node:0-18",
+  //"image": "mcr.microsoft.com/vscode/devcontainers/base:ubuntu",
+
+  "features": {
+    // 公式 AWS CLI のみ
+    "ghcr.io/devcontainers/features/aws-cli:1": {}
+  },
+
+  // コンテナ起動後に SAM CLI を pip でインストール
+  "postCreateCommand": "pip install aws-sam-cli",
+
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "terminal.integrated.profiles.linux": {
+          "bash": {
+            "path": "/bin/bash",
+            "args": ["-l", "-i"]
+          }
+        },
+        "terminal.integrated.defaultProfile.linux": "bash",
+        "editor.formatOnSave": true
+      },
+      "extensions": [
+        "amazonwebservices.aws-toolkit-vscode",
+        "esbenp.prettier-vscode"
+      ]
+    }
+  },
+
+  "forwardPorts": [3000, 3001],
+  //"remoteUser": "vscode",
+  "remoteUser": "root",
+
+  // 必要に応じてコメントアウト解除：
+  "overrideCommand": false
+}
